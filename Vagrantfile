@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
   {
     'vagrant00'	=> '192.168.200.10',
     'vagrant01'	=> '192.168.200.11',
+    'vagrant02'	=> '192.168.200.12',
   }.each do |short_name, ip|
       config.vm.define short_name do |host|
         host.vm.network 'private_network', ip: ip
