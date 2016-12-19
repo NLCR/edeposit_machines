@@ -1,0 +1,8 @@
+---
+- hosts:
+  - app
+  - dbs
+  - portal
+
+  roles:
+    - common
