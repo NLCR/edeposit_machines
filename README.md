@@ -1,2 +1,2 @@
-# edeposit_machines
+# Edeposit machines
 Infrastracture for E-deposit
