@@ -1,6 +1,12 @@
 # E-deposit stroje
 Infrastruktura pro stroje E depositu
 
+## Vagrant - Testovací prostředí s Centos/7 a LXC
+```
+git clone https://github.com/NLCR/edeposit_machines.git
+vagrant up
+```
+
 ## Popis řešení
 
 ### Portálový server
