@@ -1,0 +1,6 @@
+---
+- hosts:
+  - lxc-host
+
+  roles:
+    - lxc

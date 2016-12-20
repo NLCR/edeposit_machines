@@ -1,0 +1,24 @@
+[vagrant-machines]
+vagrant00 ansible_host=192.168.200.10 ansible_ssh_private_key_file=.vagrant/machines/vagrant00/virtualbox/private_key
+vagrant01 ansible_host=192.168.200.11 ansible_ssh_private_key_file=.vagrant/machines/vagrant01/virtualbox/private_key
+vagrant02 ansible_host=192.168.200.12 ansible_ssh_private_key_file=.vagrant/machines/vagrant02/virtualbox/private_key
+
+[lxc-host]
+vagrant00
+
+[apps]
+vagrant00
+
+[dbs]
+#vagrant01
+
+[portal]
+#vagrant02
+
+[development:children]
+apps
+dbs
+portal
+
+[vagrant-machines:vars]
+ansible_ssh_user=vagrant

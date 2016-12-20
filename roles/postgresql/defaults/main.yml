@@ -1,0 +1,4 @@
+postgres_user: vagrant
+postgres_pass: vagrant
+postgres_dbs:
+  dbname: vagrant

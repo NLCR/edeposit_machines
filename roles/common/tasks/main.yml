@@ -1,0 +1,30 @@
+---
+- name: Install beloved packages
+  yum:
+    name: ntp, unzip, vim, git
+    state: installed
+
+- name: Add tik/tak.cesnet.cz to ntp.conf
+  lineinfile: 
+    dest: /etc/ntp.conf
+    insertafter: '{{ item.regex }}'
+    line: '{{ item.line }}'
+  with_items:
+  - { regex: '^# Please consider joining the pool \(http://www.pool.ntp.org/join.html\)\.$', line: 'server tik.cesnet.cz' }
+  - { regex: '^server tik\.cesnet\.cz$', line: 'server tak.cesnet.cz' }
+  notify: restart ntpd
+
+- name: NTP daemon is running
+  service:
+    name: ntpd
+    state: started
+    enabled: yes
+
+- name: 'Set timezone to Europe/Prague | CEST'
+  timezone:
+    name: Europe/Prague
+
+- name: postfix relay to smtp.nkp.cz
+  lineinfile:
+    dest: /etc/postfix/main.cf
+    line: 'relayhost= [{{ smtp_host }}]'

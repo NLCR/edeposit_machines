@@ -1,0 +1,9 @@
+---
+- hosts:
+  - app
+  - dbs
+  - portal
+  - lxc-host
+
+  roles:
+    - common
