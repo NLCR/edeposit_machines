@@ -1,7 +1,10 @@
 # E-deposit stroje
-Infrastruktura pro stroje E depositu
+Infrastruktura pro stroje E-depositu
 
 ## Vagrant - Testovací prostředí s Centos/7 a LXC
+závislost:  ansible 2.2.0.0
+
+vagrant up nahodí box 'centos/7' a ansible do něj nainstaluje základní konfiguraci stroje + LXC prostředí
 ```
 git clone https://github.com/NLCR/edeposit_machines.git
 vagrant up
