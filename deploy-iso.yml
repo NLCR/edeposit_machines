@@ -1,0 +1,16 @@
+- name: Vcenter playbook
+  hosts: vcenter
+  connection: local
+  become: false
+
+  tasks:
+  - vsphere_copy:
+      host: '{{ vcenter_host }}'
+      login: '{{ vcenter_user }}'
+      password: '{{ vcenter_pass }}'
+      src: /Users/rudolf/Downloads/CentOS-7-x86_64-Minimal-1611.iso
+      datacenter: Hostivar
+      datastore: HSTO03_VMWAREISO
+      # path: /ISO_LINUX/CENTOS/CentOS-7-x86_64-Minimal-1611.iso
+      path: /ISO_LINUX/CENTOS/
+      validate_certs: no
