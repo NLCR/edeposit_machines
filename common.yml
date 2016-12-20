@@ -3,6 +3,7 @@
   - app
   - dbs
   - portal
+  - lxc
 
   roles:
     - common

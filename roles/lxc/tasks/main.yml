@@ -1,0 +1,9 @@
+- name: epel-release installed
+  yum:
+    name: epel-release
+    state: installed
+
+- name: install LXC
+  yum:
+    name: debootstrap, perl, libvirt, lxc, lxc-templates
+    state: installed
