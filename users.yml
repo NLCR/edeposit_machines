@@ -1,0 +1,9 @@
+- name: User access to OS and Apps
+  hosts: lxc-host
+
+  tasks:  
+  - name: Roman Bouchner can ssh to root
+    authorized_key:
+      user: root
+      state: present
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCo7lwMK1/c20+WibFGqbgoV0G/WanwbHWCMRCYhidbOn33C5qTrRVh3DeKKPu41zX+YO206QVEQb7PD2YfvbF+wxD9ZdQy30byBkpwUsKrlM27PIDdu/KY9IMIOPNJUf/s31DnZJlv5ZEw/A6uBVAw3GsZ08v2yQMZqPqp9DCIwsvDioq5lropF+cMcmLKRNTTG1pVK3mJmiTrJV8qrvPFLnZmtx+CXeLun8IijSGQ9tFado6Phs2TQ9TzCKDg1TuegLH8lOAkTmE7XUtdghpWVhvkyKGG/glodGoD9+xODbAnUFJKodsKtio/k+oYkvFsuYam3T186PdD6GHHdPi5 roman@bouchner"
