@@ -2,5 +2,6 @@
 #- include: deploy-vm.yml # VMs are deployed to staging
 #- include: vcenter.yml # All VMs are ignited and ready for action
 - include: common.yml
+- include: users.yml
 - include: lxc.yml
 #- include: dbs.yml
