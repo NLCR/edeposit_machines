@@ -11,6 +11,7 @@ dbs
 portal
 
 [vm-machines]
+dev-apps0 ansible_host=10.3.0.100 vmware_name="edeposit-aip-test"
 #dev-blcr0 ansible_host=10.3.0.50 vmware_name="dev-balancer0"
 ##dev-apps0 ansible_host=10.3.0.51 vmware_name="dev-application0"
 ##dev-dbs0  ansible-host=10.3.0.52 vmware_name="dev-database0"
