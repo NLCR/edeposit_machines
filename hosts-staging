@@ -1,0 +1,46 @@
+#
+# This is staging inventory, it used to test app in real environment.
+#
+
+[staging:children]
+vm-machines
+
+[development:children]
+apps
+dbs
+portal
+
+[vm-machines]
+dev-apps0 ansible_host=10.3.0.100 vmware_name="edeposit-aip-test"
+#dev-blcr0 ansible_host=10.3.0.50 vmware_name="dev-balancer0"
+##dev-apps0 ansible_host=10.3.0.51 vmware_name="dev-application0"
+##dev-dbs0  ansible-host=10.3.0.52 vmware_name="dev-database0"
+
+[apps]
+dev-apps0
+
+[dbs]
+dev-dbs0
+
+[portal]
+dev-blcr0
+
+
+[vcenter]
+localhost
+
+[vcenter:vars]
+vmware_pool="/Resources/NORMAL/WEBARCHIV"
+vmware_datastore=HSTO03_VMWARE_WEBARCHIV01
+vmware_type=thin
+vmware_osid=centos64Guest
+vmware_scsi=paravirtual
+vmware_datacenter=Hostivar
+vmware_cluster=H1
+vmware_size=60
+vwware_cpu=2
+vmware_memory=4
+
+[all:vars]
+ansible_ssh_user=root
+ansible_ssh_private_key_file=~/.ssh/id_rsa
